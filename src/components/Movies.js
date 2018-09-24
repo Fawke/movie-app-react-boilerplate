@@ -1,12 +1,13 @@
-import React from 'react';
-import Movie from './Movie.js';
+/* eslint react/jsx-filename-extension: 0 */
 
-const Movies = (props) => {
-  if (props.movies) {
-    return props.movies.map((movie, index) => <Movie key={index} movie={movie} />);
-  } else {
-    return <div></div>
+import React from 'react';
+import Movie from './Movie';
+
+const Movies = ({ movies }) => {
+  if (movies) {
+    return movies.map(movie => <Movie key={movie.id} movie={movie} />);
   }
-}
+  return null;
+};
 
 export default Movies;

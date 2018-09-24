@@ -1,13 +1,13 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom'; 
+/* eslint react/jsx-filename-extension: 0 */
 
-const AppBar = () => {
-  return (
-    <div>
-      <NavLink to="/trending-movies" activeClassName="is-active">Trending Movies</NavLink>
-      <NavLink to="/collections" activeClassName="is-active">My Collections</NavLink>
-    </div>
-  );
-}
-  
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+
+const AppBar = () => (
+  <div>
+    <NavLink to="/trending-movies" activeClassName="is-active">Trending Movies</NavLink>
+    <NavLink to="/collections" activeClassName="is-active">My Collections</NavLink>
+  </div>
+);
+
 export default AppBar;
