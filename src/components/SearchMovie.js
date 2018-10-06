@@ -1,38 +1,47 @@
-/* eslint react/jsx-filename-extension: 0 */
-
 import React from 'react';
+import Paper from '@material-ui/core/Paper';
 import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 
-class SearchMovie extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchTerm: '',
-    };
-    this.handleOnChange = this.handleOnChange.bind(this);
-  }
+const styles = theme => ({
+  root: {
+    ...theme.mixins.gutters(),
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
+    backgroundColor: 'red',
+    marginRight: 40,
+    marginLeft: 40,
+    marginTop: 20
+  },
+});
 
-  handleOnChange(event) {
-    const searchTerm = event.target.value;
-    this.setState(() => ({ searchTerm }));
-  }
+const SearchMovie = (props) => {
+  const { classes } = props;
 
-  render() {
-    const { handleSearchMovie } = this.props;
-    const { searchTerm } = this.state;
-    return (
-      <div>
-        <form>
-          <input type="text" placeholder="Seach movies" onChange={this.handleOnChange} />
-          <button type="button" onClick={handleSearchMovie.bind(null, searchTerm)}>Search</button>
-        </form>
-      </div>
-    );
-  }
-}
-
-SearchMovie.propTypes = {
-  handleSearchMovie: PropTypes.func.isRequired,
+  return (
+    <div>
+      <Paper 
+        className={classes.root} 
+        elevation={1}
+      >
+        <Typography 
+          variant="headline" 
+          component="h3"
+          color="primary"
+        >
+          This is a sheet of paper
+        </Typography>
+        <Typography component="p">
+          Paper can be used to build surface or other elements for your application
+        </Typography>
+      </Paper>
+    </div>
+  );
 };
 
-export default SearchMovie;
+SearchMovie.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(SearchMovie);
