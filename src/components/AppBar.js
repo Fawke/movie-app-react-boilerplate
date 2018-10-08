@@ -75,7 +75,7 @@ function SearchAppBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar 
+      <AppBar
         position="static"
         style={{ boxShadow: 'none' }}
       >
@@ -84,7 +84,7 @@ function SearchAppBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="title" color="inherit" noWrap>
-            Movie-App
+            Movie App
           </Typography>
           <div className={classes.grow} />
         </Toolbar>

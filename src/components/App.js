@@ -1,7 +1,6 @@
 /* eslint react/jsx-filename-extension: 0 */
 
 import React from 'react';
-
 import SearchMovie from './SearchMovie';
 import Movies from './Movies';
 
