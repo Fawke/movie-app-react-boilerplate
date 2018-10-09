@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
+import Grid from '@material-ui/core/Grid';
 
 const styles = theme => ({
   root: {
@@ -75,20 +76,22 @@ function SearchAppBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar
-        position="static"
-        style={{ boxShadow: 'none' }}
-      >
-        <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
-            <MenuIcon />
-          </IconButton>
-          <Typography className={classes.title} variant="title" color="inherit" noWrap>
-            Movie App
-          </Typography>
-          <div className={classes.grow} />
-        </Toolbar>
-      </AppBar>
+      <Grid container spacing={24}>
+        <AppBar
+          position="static"
+          style={{ boxShadow: 'none' }}
+        >
+          <Toolbar>
+            <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
+              <MenuIcon />
+            </IconButton>
+            <Typography className={classes.title} variant="title" color="inherit" noWrap>
+              Movie App
+            </Typography>
+            <div className={classes.grow} />
+          </Toolbar>
+        </AppBar>
+      </Grid>
     </div>
   );
 }
