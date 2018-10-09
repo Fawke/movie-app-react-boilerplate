@@ -15,12 +15,13 @@ const styles = theme => ({
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
-    margin: '20px auto 0',
-    width: '650px',
-    height: '20px',
+    height: '1em',
   },
   input: {
     width: '100%',
+  },
+  searchBox: {
+    margin: '1em auto 0',
   },
 });
 
@@ -51,33 +52,48 @@ class SearchMovie extends React.Component {
     const { searchTerm } = this.state;
     return (
       <div>
-        <Paper
-          className={classes.root}
-          elevation={3}
-        >
-          <Grid container spacing={24}>
-            <Grid item xs={11}>
-              <form
-                onSubmit={this.handleOnSubmit}
-              >
-                <Input
-                  placeholder="Search movie"
-                  onChange={this.handleOnChange}
-                  fullWidth
-                  className={classes.input}
-                  disableUnderline
-                  autoFocus
-                />
-              </form>
-            </Grid>
-            <Grid item xs={1}>
-              <SearchIcon
-                className={classes.icon}
-                onClick={handleSearchMovie.bind(null, searchTerm)}
-              />
-            </Grid>
+        <Grid container spacing={24}>
+          <Grid item xs={11} sm={8} md={6} className={classes.searchBox}>
+            <Paper
+              className={classes.root}
+              elevation={3}
+            >
+              <Grid container spacing={8}>
+                <Grid
+                  item
+                  xs={11}
+                  style={{
+                    'margin-top': '-7px',
+                  }}
+                >
+                  <form
+                    onSubmit={this.handleOnSubmit}
+                  >
+                    <Input
+                      placeholder="Search movie"
+                      onChange={this.handleOnChange}
+                      fullWidth
+                      className={classes.input}
+                      disableUnderline
+                      autoFocus
+                    />
+                  </form>
+                </Grid>
+                <Grid
+                  item
+                  xs={1}
+                  style={{
+                    'margin-top': '-3px',
+                  }}
+                >
+                  <SearchIcon
+                    onClick={handleSearchMovie.bind(null, searchTerm)}
+                  />
+                </Grid>
+              </Grid>
+            </Paper>
           </Grid>
-        </Paper>
+        </Grid>
       </div>
     );
   }
