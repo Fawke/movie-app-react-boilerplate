@@ -17,9 +17,6 @@ const styles = theme => ({
     paddingBottom: theme.spacing.unit * 2,
     height: '1em',
   },
-  input: {
-    width: '100%',
-  },
   searchBox: {
     margin: '1em auto 0',
   },
@@ -52,7 +49,7 @@ class SearchMovie extends React.Component {
     const { searchTerm } = this.state;
     return (
       <div>
-        <Grid container spacing={24}>
+        <Grid container>
           <Grid item xs={11} sm={8} md={6} className={classes.searchBox}>
             <Paper
               className={classes.root}

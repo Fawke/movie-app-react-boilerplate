@@ -76,7 +76,7 @@ function SearchAppBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <Grid container spacing={24}>
+      <Grid container>
         <AppBar
           position="static"
           style={{ boxShadow: 'none' }}
